@@ -7,7 +7,8 @@ module.exports = {
 		if (args.length != 1 || !args[0].match(/<@.?[0-9]*?>/)) {
 			message.channel.send("Please only use a tagged user as an argument! Example: !ping @Person");
 			return;
-		} else if ((args[0].includes("<@317326420617592833>") || args[0].includes("<@317326420617592833>")) & message.author.username != "Myself⁷") {
+		} else if (args[0].includes("317326420617592833>") && message.author.username != "Myself⁷") {
+			// Stopping people from spamming my account because... that was happening.
 			message.channel.send("No you can't spam ping the creator. That's mean :( ");
 			return;
 		}
