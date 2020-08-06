@@ -49,14 +49,15 @@ client.on('message', message => {
   } else {
     // Passive commands/actions
     if (message.embeds[0]) {
-      console.log(message.embeds[0]);
-      if (message.embeds[0].provider.name + message.embeds[0].provider.url === "YouTubeYouTube") {
-        const command = client.commands.get("video share");
-        try {
-          command.execute(message);
-        } catch (error) {
-          console.error(error);
-          message.reply('there was an error trying to execute that command!');
+      if (message.embeds[0].type == "video") {
+        if (message.embeds[0].provider.name + message.embeds[0].provider.url === "YouTubeYouTube") {
+          const command = client.commands.get("video share");
+          try {
+            command.execute(message);
+          } catch (error) {
+            console.error(error);
+            message.reply('there was an error trying to execute that command!');
+          }
         }
       }
     }
