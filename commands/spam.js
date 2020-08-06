@@ -1,15 +1,20 @@
+const {
+	myDiscord
+} = require('../config.json');
+
 module.exports = {
 	name: 'spam',
 	description: 'Spam ping your friends, because who wouldn\'t??',
 	guildOnly: true,
 	usage: '<user>',
+	requiresPrefix: true,
 	execute(message, args) {
 		console.log(message.author);
 		if (args.length != 1 || !args[0].match(/<@.?[0-9]*?>/g)) {
-			message.channel.send("Please only use a tagged user as an argument! Example: !ping @Person");
+			message.channel.send("Please only use a tagged user as an argument! Example: \`!ping " + this.usage + "`");
 			return;
-		} else if (args[0].includes("317326420617592833") && ((message.author.username != "Myself⁷" || message.author.discriminator != "8785") || message.author.bot)) {
-			// Stopping people from spamming my account because... that was happening. My Discord tag is Myself⁷#8785
+		} else if (args[0].includes(myDiscord.number) && ((message.author.username != myDiscord.name || message.author.discriminator != myDiscord.identifier) || message.author.bot)) {
+			// Stopping people from spamming my account because... that was happening.
 			message.channel.send("No you can't spam ping the creator. That's mean :( ");
 			return;
 		}
