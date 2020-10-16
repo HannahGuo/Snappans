@@ -6,4 +6,4 @@ Who knows?
 
 ### Why... is it called Snappans?
 
-I use variations of the word "snap" for my username on some platforms... and my name is Hannah so... I thought it was funny. 
+I use variations of the word "snap" for my username on some platforms... and my name is Hannah so... palindromes. I thought it was funny. 
